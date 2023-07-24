@@ -1,7 +1,7 @@
 .wrapper {
     margin-right: auto; 
     margin-left:  auto; 
-    max-width: 960px;  
+    max-width: 90%;  
     padding-right: 10px; 
     padding-left:  10px; 
   }
@@ -13,8 +13,18 @@
     min-height: 20pt;
   }
 
-  td{
+  .month {
+    font-size: 110%;
+    font-weight: bold;
+    border-bottom: #9999ff 3px solid;
+    background-color: #ddddff;
+  }
+  td.day{
     text-align: right;
+  }
+  
+  td.cell{
+    vertical-align: top;
   }
   .sun{
     color: red;
@@ -37,4 +47,8 @@
   .workday{
     color: blue;
     font-weight: bold;
+  }
+
+  span.note{
+    font-size: small;
   }

@@ -108,7 +108,6 @@ class KsCalendar
         return $days;
     }
 
-
     public function __toString() : string
     {
         $out = "Sun Mon Tue Wed Thu Fri Sat\n";

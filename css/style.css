@@ -1,0 +1,40 @@
+.wrapper {
+    margin-right: auto; 
+    margin-left:  auto; 
+    max-width: 960px;  
+    padding-right: 10px; 
+    padding-left:  10px; 
+  }
+  #navbar {
+    background-color: darkgray;
+    color: white;
+    text-align: right;
+    vertical-align:middle;
+    min-height: 20pt;
+  }
+
+  td{
+    text-align: right;
+  }
+  .sun{
+    color: red;
+  }
+
+  .sat{
+    color: blue;
+  }
+
+  .holiday{
+    color: red;
+    font-weight: bold;
+  }
+
+  .vacation{
+    color: rgb(247, 94, 120);
+    font-weight: bold;
+  }
+
+  .workday{
+    color: blue;
+    font-weight: bold;
+  }

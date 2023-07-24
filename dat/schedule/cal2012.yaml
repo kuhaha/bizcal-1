@@ -1,0 +1,106 @@
+2012:
+  4:
+    1:
+      name:学年始め
+    2:
+      name: 入学式(1年次書類交付)
+    3:
+      range: 2012-4-6
+      name: 1年次オリエンテーション等
+    7:
+      name: 前期授業開始
+      tag: lecture
+    30:
+      name: 月曜授業実施
+      tag: workday
+  5:
+    2:
+      name: 昭和の日の振替休業日
+      tag: holiday
+    4:
+      name: 開学記念日
+    15:
+      name: 学友会定期総会（全学休講）
+      tag: holiday
+  7:
+    27:
+      name: 前期授業終了
+      tag: lecture
+    30:
+      range: 2012-8-4
+      name: 前期試験開始（6日間）
+      tag: exam
+  8:
+    4:
+      name: 前期試験終了
+      tag: exam
+    6:
+      range: 2012-9-13
+      name: 夏季休業開始
+      tag: vacation
+  9:
+    13:
+      name: 夏季休業終了
+      tag: vacation
+    14:
+      range: 2013-1-22
+      name: 後期授業開始
+      tag: lecture
+    17:
+      name: 月曜授業実施
+      tag: workday
+    18:
+      name: 前期学位授与式
+  11:
+    1:
+      range: 2012-11-5
+      name: 香椎祭（5日間）
+      tag: holiday
+    6:
+      name: 敬老の日の振替休業日
+      tag: holiday
+    7:
+      name: 補講日
+      tag: extra
+  12:
+    24:
+      name: 月曜授業実施
+      tag: workday
+    25:
+      range: 2013-1-6
+      name: 冬季休業開始
+      tag: vacation
+2013:
+  1:
+    6:
+      name: 冬季休業終了
+      tag: vacation
+    7:
+      name: 授業再開
+      tag: lecture
+    15:
+      name: 天皇誕生日の振替休業日
+      tag: holiday
+    19:
+      name: 臨時休業日
+      tag: holiday
+    22:
+      name: 後期授業終了
+      tag: lecture
+    23:
+      name: 補講日
+      tag: extra
+    24:
+      name: 英語アチーブメントテスト
+    25:
+      range: 2013-1-31
+      name: 後期試験開始（6日間）
+      tag: exam
+    31:
+      name: 後期試験終了
+      tag: exam
+  3:
+    25:
+      name: 学位授与式
+    31:
+      name: 学年終わり

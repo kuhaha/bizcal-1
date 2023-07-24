@@ -1,0 +1,129 @@
+2015:
+  4:
+    1:
+      name:学年始め
+    2:
+      name: 入学式(1年次書類交付)
+    3:
+      range: 2015-4-9
+      name: 【～9】1年次オリエンテーション等
+    10:
+      name: 前期授業開始
+      tag: lecture
+    29:
+      name: 水曜授業実施
+      tag: workday
+  5:
+    4:
+      name: 開学記念日
+    6:
+      name: 水曜日授業実施
+      tag: workday
+    15:
+      name: 学友会定期総会（全学休講）
+      tag: holiday
+  7:
+    20:
+      name: 月曜授業実施
+      tag: workday
+    28:
+      name: 前期授業終了
+      tag: lecture
+    29:
+      name: 補講日
+      tag: extra
+    30:
+      range: 2015-8-5
+      name: 【～8/5】前期試験開始（6日間）
+      tag: exam
+  8:
+    5:
+      name: 前期試験終了
+      tag: exam
+    6:
+      name: 振替休日（4/29）
+      tag: holiday
+    7:
+      name: 振替休日（5/6）
+      tag: holiday
+    8:
+      range: 2015-9-11
+      name: 【～9/11】夏季休業開始
+      tag: vacation
+  9:
+    11:
+      name: 夏季休業終了
+      tag: vacation
+    12:
+      range: 2016-1-20
+      name: 【～1/20】後期授業開始
+      tag: lecture
+    16:
+      name: 前期学位授与式
+    21:
+      name: 月曜授業実施
+      tag: workday
+  10:
+    12:
+      name: 月曜授業実施
+      tag: workday
+    31:
+      range: 2015-11-4
+      name: 【～11/4】香椎祭（5日間）
+      tag: holiday
+  11:
+    4:
+      name: 振替休業日(7/20)
+      tag: holiday
+    5:
+      name: 振替休業日(9/21)
+      tag: holiday
+    23:
+      name: 月曜授業実施
+      tag: workday
+  12:
+    22:
+      name: 冬季休業前の授業終了
+      tag: workday
+    24:
+      name: 振替休業日(10/12)
+      tag: holiday
+    25:
+      name: 振替休業日(11/23)
+      tag: holiday
+    26:
+      range: 2016-1-5
+      name: 【～1/5】冬季休業開始
+      tag: vacation
+2016:
+  1:
+    5:
+      name: 冬季休業終了
+      tag: vacation
+    6:
+      name: 授業再開
+      tag: lecture
+    15:
+      range: 2015-1-16
+      name: 臨時休業日
+      tag: holiday
+    20:
+      name: 後期授業終了
+      tag: lecture
+    21:
+      name: 補講日
+      tag: extra
+    22:
+      name: 英語アチーブメントテスト
+    23:
+      range: 2016-1-29
+      name: 【～29】後期試験開始（6日間）
+      tag: exam
+    29:
+      name: 後期試験終了
+      tag: exam
+  3:
+    22:
+      name: 学位授与式
+    31:
+      name: 学年終わり

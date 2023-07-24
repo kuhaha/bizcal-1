@@ -1,0 +1,119 @@
+2013:
+  4:
+    1:
+      name:学年始め
+    2:
+      name: 入学式(1年次書類交付)
+    3:
+      range: 2013-4-6
+      name: 【～6】1年次オリエンテーション等
+    8:
+      name: 前期授業開始
+      tag: lecture
+    29:
+      name: 月曜授業実施
+      tag: workday
+  5:
+    1:
+      name: 「昭和の日」振替休業日
+      tag: holiday
+    2:
+      name: 「海の日」振替休業日
+      tag: holiday
+    4:
+      name: 開学記念日
+    14:
+      name: 学友会定期総会（全学休講）
+      tag: holiday
+  7:
+    15:
+      name: 月曜授業実施
+      tag: workday
+    26:
+      name: 前期授業終了
+      tag: lecture
+    29:
+      name: 補講日
+      tag: extra
+    30:
+      range: 2013-8-5
+      name: 【～8/5】前期試験開始（6日間）
+      tag: exam
+  8:
+    5:
+      name: 前期試験終了
+      tag: exam
+    6:
+      range: 2013-9-13
+      name: 【～9/13】夏季休業開始
+      tag: vacation
+  9:
+    13:
+      name: 夏季休業終了
+      tag: vacation
+    14:
+      range: 2014-1-21
+      name: 【～1/21】後期授業開始
+      tag: lecture
+    16:
+      name: 月曜授業実施
+      tag: workday
+    19:
+      name: 前期学位授与式
+    23:
+      name: 月曜授業実施
+      tag: workday
+  10:
+    14:
+      name: 月曜授業実施
+      tag: workday
+    31:
+      name: 補講日
+      tag: extra
+  11:
+    1:
+      range: 2013-11-5
+      name: 【～5】香椎祭（5日間）
+      tag: holiday
+    6:
+      name: 「秋分の日」振替休業日
+      tag: holiday
+  12:
+    24:
+      range: 2014-1-5
+      name: 【～1/5】冬季休業開始
+      tag: vacation
+2014:
+  1:
+    5:
+      name: 冬季休業終了
+      tag: vacation
+    6:
+      name: 授業再開
+      tag: lecture
+    14:
+      name: 「体育の日」振替休業日
+      tag: holiday
+    18:
+      name: 臨時休業日
+      tag: holiday
+    21:
+      name: 後期授業終了
+      tag: lecture
+    22:
+      name: 補講日
+      tag: extra
+    23:
+      name: 英語アチーブメントテスト
+    24:
+      range: 2014-1-30
+      name: 【～30】後期試験開始（6日間）
+      tag: exam
+    30:
+      name: 後期試験終了
+      tag: exam
+  3:
+    24:
+      name: 学位授与式
+    31:
+      name: 学年終わり

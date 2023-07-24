@@ -1,0 +1,117 @@
+2020:
+  4:
+    1:
+      name:学年始め・入学式(1年次書類交付)
+    3:
+      range: 2020-4-7
+      name: 【～7】1年次オリエンテーション等
+    22:
+      name: 前期授業開始
+      tag: lecture
+    29:
+      name: 水曜授業実施日
+      tag: lecture  
+  5:
+    4:
+      name: 開学記念日
+    9:
+      name: 学友会定期総会（全学休講）
+      tag: holiday
+  7:
+    4:
+      name: 火曜授業実施
+      tag: workday
+    18:
+      name: 授業予備日
+      tag: extra
+    23:
+      name: 月曜日授業実施日・前期授業終了
+      tag: lecture
+    24:
+      name: 英語アチーブメントテスト
+      tag: workday
+      
+    25:
+      range: 2020-7-31
+      name: 【～7/31】前期試験開始（6日間）
+      tag: exam
+  8:
+    1:
+      name: 振替休業日（9/21）
+      tag: holiday
+    2:
+      name: KSUチャレンジマンス【～9/13】
+      tag: holiday
+    3:
+      name: 振替休業日（9/22）
+      tag: holiday
+    4:
+      range: 2020-9-13
+      name: 【～9/13】夏季休業開始
+      tag: vacation
+  9:
+    11:
+      name: 前期学位授与式
+    13:
+      name: 夏季休業終了
+      tag: vacation
+    14:
+      range: 2020-12-23
+      name: 【～1/15】後期授業開始
+      tag: lecture
+    21:
+      name: 月曜授業実施
+      tag: workday
+    22:
+      name: 火曜授業実施
+      tag: workday
+  10:
+    31:
+      name: 香椎祭
+      tag: holiday
+  11:
+    1:
+      name: 香椎祭
+      tag: holiday
+   2:
+      name: 香椎祭
+      tag: holiday
+   3:
+      name: 香椎祭
+      tag: holiday
+  12:
+    23:
+      name: 後期授業終了・月曜日授業実施
+      tag: workday
+    24:
+      range: 2021-1-5
+      name: 【～1/5】冬季休業開始
+      tag: vacation
+2021:
+  1:
+    5:
+      name: 冬季休業終了
+      tag: vacation
+    6:
+      name: 授業予備日
+      tag: lecture
+    7:
+      name: 英語アチーブメントテスト
+    8:
+      range: 2021-1-18
+      name: 【～18】後期試験開始（6日間）
+      tag: exam
+    15:
+      name: 臨時休業日
+      tag: vacation
+    16:
+      name: 臨時休業日
+      tag: vacation
+    19:
+      name: KSUチャレンジマンス【～3/21】
+      tag: holiday
+  3:
+    18:
+      name: 学位授与式
+    31:
+      name: 学年終わり

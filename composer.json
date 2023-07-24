@@ -1,0 +1,33 @@
+{
+  "name": "business/calendar",
+  "description":"A Pure PHP business calendar library ",
+  "version": "1.0.0",
+  "type": "library",
+  "keywords": [
+    "holiday",
+    "holidays",
+    "calendar",
+    "national",
+    "calculation",
+    "celebration",
+    "date",
+    "time"
+  ],
+  "readme": "README.md",
+  "authors": [
+    {
+      "name": "hoge",
+      "email": "hoge@gmail.com",
+      "role" : "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+        "bizcal\\": "lib/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "symfony/yaml": "*"
+  }
+}

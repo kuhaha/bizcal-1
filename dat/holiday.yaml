@@ -1,0 +1,94 @@
+# month -> list of holiday definitions
+# definition of the `day`:  
+#   (1) int -- a day number
+#   (2) array[int] -- a [0]'th [1] weekday(0..6)
+# contraints : 
+#   (1) `for`, array[int], a range -- valid for a period from [0] to [1] inclusive
+#   (2) `in`,  array[int], a set  -- valid in these years
+#   (3) `except`, array[int], a set -- valid except these years
+1: 
+  - name: 元日
+    day: 1
+  - name: 成人の日
+    day: [2, 1] # 2nd Monday
+2: 
+  - name: 建国記念の日
+    day: 11
+    for: [1966, 2999] 
+  - name: 天皇誕生日  # 令和天皇
+    day: 23
+    for: [2020, 2999]
+3: 
+  - name: 春分の日
+    day: springEquinox
+4: 
+  - name: 昭和の日
+    day: 29
+    for: [1989, 2999]
+  - name: 天皇誕生日 # 昭和天皇
+    day: 29
+    for: [1910, 1988] 
+5: 
+  - name: 天皇の即位の日
+    day: 1
+    in: [2019]
+  - name: 憲法記念日
+    day: 3
+  - name: みどりの日
+    day: 4
+  - name: こどもの日
+    day: 5
+7: 
+  - name: 海の日
+    day: [3, 1] # 3rd Monday
+    except: [2020, 2021] 
+  - name: 海の日
+    day: 22
+    in: [2021]
+  - name: 海の日
+    day: 23
+    in: [2020]
+  - name: スポーツの日
+    day: 24
+    in: [2020]
+  - name: スポーツの日
+    day: 23
+    in: [2021]
+8: 
+  - name: 山の日
+    day: 11
+    except: [2020, 2021]
+  - name: 山の日
+    day: 8
+    in: [2021]
+  - name: 山の日
+    day: 10
+    in: [2020]
+9: 
+  - name: 敬老の日
+    day: [3, 1] # 3rd Monday
+  - name: 秋分の日
+    day: autumnEquinox
+10: 
+  - name: 体育の日
+    day: 10
+    for: [1966, 1999]
+  - name: 体育の日
+    day: [2,1]
+    for: [2000, 2019]
+  - name: スポーツの日
+    day: [2,1]
+    for: [2020, 2999]
+    except: [2020, 2021]
+  - name: 即位礼正殿の儀
+    day: 22
+    in: [2019]
+11: 
+  - name: 文化の日
+    day: 3
+  - name: 勤労感謝の日
+    day: 23
+12: 
+  - name: 天皇誕生日 # 平成天皇
+    day: 23
+    for: [1989, 2018]

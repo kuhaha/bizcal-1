@@ -38,7 +38,7 @@ foreach (range(3,14) as $m){
     }catch (Exception $e){} 
     $national = $holiday->getHolidays($month);
     $calendar = new KsCalendar($year, $month);
-    $title .= sprintf('<td class="month">%d月</td>',  $month);
+    $title .= sprintf('<td class="month" width="200px">%d月</td>',  $month);
     list('table'=>$table, 'days'=>$days) = getMonth($year, $month, $holiday, $schedule);
     $tb_row .= '<td class="cell">' . $table . "</td>\n";
     $tl_row .= '<td class="cell"><hr>' . $days . "</td>\n";
@@ -83,7 +83,7 @@ function getMonth($year, $month, $holiday, $schedule)
     $table =  $row = "";
     for ($w = 0; $w < 7; $w++){
         $class = $w==0 ? 'sun' : ($w==6 ? 'sat' : '');
-        $row .=  sprintf ('<td class="%s">%s</td>', $class, $names[$w]);
+        $row .=  sprintf ('<th class="%s">%s</th>', $class, $names[$w]);
     }    
     $table .= "<tr>{$row}</tr>\n";
     

@@ -1,7 +1,7 @@
 2019:
   4:
     1:
-      name:学年始め
+      name: 学年始め
     2:
       name: 入学式(1年次書類交付)
     3:
@@ -14,12 +14,9 @@
       name: 月曜授業実施
       tag: workday
     30:
-      name: 国民の休日(火曜授業実施)
+      name: 火曜授業実施
       tag: workday
   5:
-    2:
-      name: 国民の休日
-      tag: holiday
     4:
       name: 開学記念日
     11:

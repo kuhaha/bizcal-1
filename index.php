@@ -22,32 +22,41 @@ define ('DAT_DIR', 'dat');
 <div class="wrapper">
 <?php
 $year  = isset($_GET['y']) ? (int)$_GET['y'] : 2023;
-// $month = isset($_GET['m']) ? (int)$_GET['m'] : 8;
 $dat_holiday = Yaml::parseFile(DAT_DIR . "/holiday.yaml");
-$holiday = new KsHoliday($year, $dat_holiday);
+$holiday1 = new KsHoliday($year, $dat_holiday);
+$holiday2 = new KsHoliday($year+1, $dat_holiday);
 
 $cno = 0;
-$tb_row = $tl_row = $title ='';
+$_row1 = $_row2 = $_row3 ='';
 echo '<table>';
 foreach (range(3,14) as $m){
     $month = $m % 12 + 1;
-    $ac_year = ($month < 4) ? $year + 1 : $year; 
+    $n_year = $year;
+    $holiday = $holiday1;
+    if ($month < 4) {
+        $n_year =  $year + 1;
+        $holiday = $holiday2;
+    }
+    $holidays = $holiday->getHolidays($month);
+    $calendar = new KsCalendar($n_year, $month);
+
     $schedule = [];
     try {
         $schedule = Yaml::parseFile(DAT_DIR . "/schedule/cal{$year}.yaml");
-    }catch (Exception $e){} 
-    $national = $holiday->getHolidays($month);
-    $calendar = new KsCalendar($year, $month);
-    $title .= sprintf('<td class="month" width="200px">%d月</td>',  $month);
-    list('table'=>$table, 'days'=>$days) = getMonth($year, $month, $holiday, $schedule);
-    $tb_row .= '<td class="cell">' . $table . "</td>\n";
-    $tl_row .= '<td class="cell"><hr>' . $days . "</td>\n";
+    }catch (Exception $e){
+        // echo $e->getMessage();
+    } 
+
+    $_row1 .= sprintf('<td class="month" width="200px">%d月</td>',  $month);
+    list('table'=>$table, 'days'=>$days) = getMonth($n_year, $month, $holidays, $schedule);
+    $_row2 .= '<td class="cell">' . $table . "</td>\n";
+    $_row3 .= '<td class="holiday-names">' . $days . "</td>\n";
     $cno++;
     if ($cno % 6==0){
-        echo '<tr>' . $title . "</tr>\n";
-        echo '<tr>' . $tb_row . "</tr>\n";
-        echo '<tr>' . $tl_row . "</tr>\n";
-        $tb_row = $tl_row = $title ='';     
+        echo '<tr>' . $_row1 . "</tr>\n";
+        echo '<tr>' . $_row2 . "</tr>\n";
+        echo '<tr>' . $_row3 . "</tr>\n";
+        $_row1 = $_row2 = $_row3 ='';     
     }
 }
 echo '</table>';
@@ -58,10 +67,10 @@ function parseSchedule($data)
     foreach ($data as $d=>$info){
         if (isset($info['tag'])){
             if (in_array($info['tag'], ['workday','lecture','extra'])){
-                $days[(int)$d] = ['class'=>'workday', 'name'=>$info['name']]; 
+                $days[$d] = ['class'=>'workday', 'name'=>$info['name']]; 
             }
             if (in_array($info['tag'], ['holiday','vacation'])){
-                $days[(int)$d] = ['class'=>'vacation', 'name'=>$info['name']]; 
+                $days[$d] = ['class'=>'vacation', 'name'=>$info['name']]; 
             }
         }else{
             $days[(int)$d] = ['class'=>'sat', 'name'=>$info['name']];
@@ -70,10 +79,9 @@ function parseSchedule($data)
     return $days;
 }
 
-function getMonth($year, $month, $holiday, $schedule)
+function getMonth($year, $month, $holidays, $schedule)
 {
     $cal = new KsCalendar($year, $month);
-    $hdays = $holiday->getHolidays($month);
     $names = $cal->getWeekdays();
     $days = $cal->getDays(); 
     $sdays = [];
@@ -93,7 +101,7 @@ function getMonth($year, $month, $holiday, $schedule)
     }
     foreach ($days as $d => ['wday'=>$w, 'class'=>$class]){
         $md = sprintf("%02d-%02d", $month, $d);
-        if (key_exists($md, $hdays)){
+        if (key_exists($md, $holidays)){
             $class .= ' holiday'; 
         }
         if (isset($sdays[$d])){
@@ -114,7 +122,7 @@ function getMonth($year, $month, $holiday, $schedule)
  
     $hdaynames = [];
     $daynames = [];
-    foreach ($hdays as $md=>$name){
+    foreach ($holidays as $md=>$name){
         $d = (int)substr($md,-2);
         $daynames[] = $d;
         $hdaynames[$d] =['class'=>'holiday', 'name'=>$name]; 
@@ -130,12 +138,11 @@ function getMonth($year, $month, $holiday, $schedule)
     foreach ($daynames as $d){
         if (isset($sdaynames[$d])){
             $info = $sdaynames[$d];
-            $days .= '<span class="note ' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span><br>\n"; 
+            $days .= '<span class="' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span><br>\n"; 
         } 
         if (isset($hdaynames[$d])){
             $info = $hdaynames[$d];
-            $days .= '<span class="note ' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span><br>\n"; 
-
+            $days .= '<span class="' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span><br>\n"; 
         }
     }
     return ['table'=>$table, 'days'=>$days];

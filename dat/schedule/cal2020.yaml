@@ -1,7 +1,7 @@
 2020:
   4:
     1:
-      name:学年始め・入学式(1年次書類交付)
+      name: 学年始め・入学式(1年次書類交付)
     3:
       range: 2020-4-7
       name: 【～7】1年次オリエンテーション等
@@ -73,10 +73,10 @@
     1:
       name: 香椎祭
       tag: holiday
-   2:
+    2:
       name: 香椎祭
       tag: holiday
-   3:
+    3:
       name: 香椎祭
       tag: holiday
   12:

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+#declare(strict_types=1);
 
 namespace bizcal;
 
@@ -63,7 +63,7 @@ class KsCalendar
     }
 
     /** d2w(): transform a day number to weekday */
-    public function d2w(int $day, string $name='') : int | string
+    public function d2w(int $day, string $name='') //: int | string
     {
         $w = ($this->firstwday + $day -1) % 7;
         if ($name === 'JP')

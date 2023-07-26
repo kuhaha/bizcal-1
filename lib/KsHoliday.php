@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);
 
 namespace bizcal;
 
@@ -114,7 +114,7 @@ class KsHoliday
     /** check if there is exact one day between 2 dates. Return the day if exists, or false otherwise 
      * e.g., sandwiched('03-31', '04-02') => '04-01'
     */
-    protected function sandwiched(string $date1, string $date2) : string | bool
+    protected function sandwiched(string $date1, string $date2) // : string | bool
     {
         if ( $date2 === $this->mkdate($date1, +2)){
             return $this->mkdate($date1, +1);

@@ -1,5 +1,5 @@
 <?php
-#declare(strict_types=1);
+// declare(strict_types=1);
 
 namespace bizcal;
 
@@ -36,7 +36,7 @@ class KsCalendar
     }
 
     /** select() : select days of specified weekdays */
-    public function select(array|int $week, array|int $wday=[], int $prefer=1): array
+    public function select(array $week, array $wday=[], int $prefer=1): array
     {    
         $days = [];
         if (is_scalar($week)) $week = [$week];
@@ -63,7 +63,7 @@ class KsCalendar
     }
 
     /** d2w(): transform a day number to weekday */
-    public function d2w(int $day, string $name='') //: int | string
+    public function d2w(int $day, string $name='') 
     {
         $w = ($this->firstwday + $day -1) % 7;
         if ($name === 'JP')

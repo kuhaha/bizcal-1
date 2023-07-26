@@ -103,7 +103,7 @@ class KsHoliday
     /** check if $a is in range of $range[0] ~ $range[1] 
      * e.g. during(3, [2,4]) => TRUE  
     */
-    protected static function during(mixed $a, array $range) : bool
+    protected static function during($a, $range) 
     {
         if (sizeof($range) != 2)
             throw new Exception("Illegal arguments! the second argument should be an array of size 2");
@@ -114,7 +114,7 @@ class KsHoliday
     /** check if there is exact one day between 2 dates. Return the day if exists, or false otherwise 
      * e.g., sandwiched('03-31', '04-02') => '04-01'
     */
-    protected function sandwiched(string $date1, string $date2) // : string | bool
+    protected function sandwiched(string $date1, string $date2) : string
     {
         if ( $date2 === $this->mkdate($date1, +2)){
             return $this->mkdate($date1, +1);
@@ -124,7 +124,7 @@ class KsHoliday
 
     /** parse day definition and calculate a definite day 
     */
-    private function parseDay(int $month, mixed $day) : int
+    private function parseDay($month,  $day) 
     {
         $cal = new KsCalendar($this->year, $month);
         if (is_integer($day))

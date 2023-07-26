@@ -96,10 +96,10 @@ EOT; // single-quoted dochere string
         $format_chars = [
             'J' => $gengo['name'],  // 元号(漢字)
             'R' => '\\' . $gengo['romaji'], // 元号略称(フォーマット文字とされないようにエスケープ必要)
-            'K' => $year1==1 ? '元' : $year1, // 和暦用年(元年表示)
-            'k' => $year1, // 和暦用年
-            'Q' => $year2, // 西暦年度
-            'q' => $year3, // 和暦年度
+            'K' => $year1==1 ? '元' : strval($year1), // 和暦用年(元年表示)
+            'k' => strval($year1), // 和暦用年
+            'Q' => strval($year2), // 西暦年度
+            'q' => strval($year3), // 和暦年度
             'b' => self::$weekJp[$w], // 日本語曜日
             'E' => $am_pm, // 午前午後
         ];
@@ -118,7 +118,7 @@ EOT; // single-quoted dochere string
     }
 
     /** 指定した文字を置換する(エスケープされていないもののみ) */
-    private function replaceChar(string $char, string |int $replace, string $string) : string
+    private function replaceChar(string $char, string $replace, string $string) : string
     {
         $string = preg_replace('/(?<!\\\)' . $char . '/', '${1}'. $replace, $string);
         $string = preg_replace('/\\\\' . $char . '/', $char, $string); // エスケープ文字を削除

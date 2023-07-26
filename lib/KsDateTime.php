@@ -9,7 +9,7 @@ class KsDateTime extends \DateTime{
      * DateTime  : [AB.D.FGHI..LMNOP..STU.WXYZ a.cde.ghij.lmnop.rstuvwxyz]
      * KsDateTime: [EJKQR.bkq], not used [CV.f]
      */ 
-    private const HELP = <<<'EOT'
+    private const HELP = '
 Japanese extensions to standard `DateTime` class (和暦などformatを追加)
 追加した記号:
 J : 元号(漢字)。例：昭和
@@ -27,7 +27,7 @@ E : 午前午後
 
 例) $dt = new KsDateTime("1965/10/18 16:10");
     echo $dt->format("JK年n月j日(x) Eg:i"); // 昭和40年10月18日(月) 午後4:10
-EOT; // single-quoted dochere string
+'; // single-quoted dochere string
 
     const DEFAULT_TO_STRING_FORMAT = 'Y-m-d H:i:s'; // toString()で利用する表示フォーマット
     const DATETIME_FORMAT = '/(?<!\\\)[ABDFGHILMNOPSTUWXYZacdeghijlmnoprstuvwxyz]/';

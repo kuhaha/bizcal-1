@@ -62,10 +62,8 @@
       tag: vacation
   9:
     14:
-      name: 夏季休業終了
+      name: 夏季休業終了・前期学位授与式
       tag: vacation
-    14:
-      name: 前期学位授与式
     15:
       range: 2018-1-19
       name: 【～1/19】後期授業開始

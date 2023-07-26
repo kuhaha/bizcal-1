@@ -12,12 +12,12 @@ use function date;
 
 class KsCalendar
 {
-    public int $year;// @var year
-    public int $month;// @var month
-    public int $lastday;// @var lastday of the month, days of the month
-    public int $n_weeks;// @var number of weeks
-    public int $firstwday;// @var weekday of the first day 
-    public int $lastwday;// @var weekday of the last day
+    public  $year;// @var year
+    public $month;// @var month
+    public $lastday;// @var lastday of the month, days of the month
+    public $n_weeks;// @var number of weeks
+    public $firstwday;// @var weekday of the first day 
+    public $lastwday;// @var weekday of the last day
     
     public const PREFER_TO_WDAY = 1;  // find the n'th weekday    
     public const PREFER_TO_WEEK = 2;  // in n'th week find the weekday  

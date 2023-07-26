@@ -4,7 +4,6 @@
 namespace bizcal;
 
 use bizcal\KsCalendar;
-use bizcal\KsDateTime;
 
 use Exception;
 use function array_filter;
@@ -190,7 +189,7 @@ class KsHoliday
                 if ($this->validate($d)){
                     $hday = $this->parseDay($month, $d['day']);                    
                     if ($hday > 0){
-                        $date = (new KsDateTime)->setDate($year, $month, $hday);
+                        $date = (new \DateTime)->setDate($year, $month, $hday);
                         if ($sp_holiday != null ){ // fix the candidate sp_holiday 
                             if ($sp_holiday === $date){
                                 $sp_holiday->modify('+1 day');
@@ -203,7 +202,7 @@ class KsHoliday
                         $cal = new KsCalendar($year, $month);
                         $wday = $cal->d2w($hday);
                         if ($wday === 0) { //  a candiate sp_hodilday 
-                            $sp_holiday = (new KsDateTime)->setDate($year, $month, $hday +1);
+                            $sp_holiday = (new \DateTime)->setDate($year, $month, $hday +1);
                         }                        
                     }
                 }

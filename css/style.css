@@ -13,6 +13,9 @@
     min-height: 20pt;
   }
 
+  th.wday{
+    text-align: right;
+  }
   .month {
     font-size: 110%;
     font-weight: bold;

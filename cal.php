@@ -52,7 +52,7 @@ class MyCalendar{
             $_row1 .= sprintf('<td class="month" width="200px">%d月</td>',  $month);
             list('table'=>$table, 'days'=>$days) = $this->getMonth($n_year, $month, $holidays, $schedule);
             $_row2 .= '<td class="cell">' . $table . "</td>\n";
-            $_row3 .= '<td class="holiday-names">' . $days . "</td>\n";
+            $_row3 .= '<td class="holiday-names">' . implode('<br>',$days) . "</td>\n";
             $cno++;
             if ($cno % 6==0){
                 echo '<tr>' . $_row1 . "</tr>\n";
@@ -63,12 +63,13 @@ class MyCalendar{
         }
         echo '</table>';
     }
+
     function parseSchedule($data)
     {
         $days = [];
         foreach ($data as $d=>$info){
             if (isset($info['tag'])){
-                if (in_array($info['tag'], ['workday','lecture','extra'])){
+                if (in_array($info['tag'], ['workday','lecture','extra','exam'])){
                     $days[$d] = ['class'=>'workday', 'name'=>$info['name']]; 
                 }
                 if (in_array($info['tag'], ['holiday','vacation'])){
@@ -81,7 +82,7 @@ class MyCalendar{
         return $days;
     }
 
-    function getMonth($year, $month, $holidays, $schedule)
+    public function getMonth($year, $month, $holidays, $schedule)
     {
         $cal = new KsCalendar($year, $month);
         $names = $cal->getWeekdays();
@@ -92,7 +93,7 @@ class MyCalendar{
         }
         $table =  $row = "";
         for ($w = 0; $w < 7; $w++){
-            $class = $w==0 ? 'sun' : ($w==6 ? 'sat' : '');
+            $class = $w==0 ? 'wday sun' : ($w==6 ? 'wday sat' : 'wday');
             $row .=  sprintf ('<th class="%s">%s</th>', $class, $names[$w]);
         }    
         $table .= "<tr>{$row}</tr>\n";
@@ -113,14 +114,17 @@ class MyCalendar{
             $row .=  sprintf ('<td class="%s">%d</td>', $class, $d);
             if ($w == 6){
                 $table .=  "<tr>{$row}</tr>\n";
-                $row = "";
+                $row = ""; 
             }
         }
-        for ($w= $cal->lastwday+1; $w<7; $w++){
-            $row .= "<td></td>";
+        if ($cal->lastwday < 6){
+            $row .= '<td colspan="' .(6-$cal->lastwday). '"><br></td>';
         }
         $table .=  "<tr>{$row}</tr>\n";
-        $table = "<table>\n{$table}</table>\n";
+        if ($cal->n_weeks < 6) {
+            $table .= "<td colspan=7><br></td>\n";
+        }
+        $table = "<table class='table'>\n{$table}</table>\n";
     
         $hdaynames = [];
         $daynames = [];
@@ -136,15 +140,15 @@ class MyCalendar{
         }
         $daynames = array_unique($daynames);
         sort($daynames);
-        $days = "";
+        $days = [];
         foreach ($daynames as $d){
             if (isset($sdaynames[$d])){
                 $info = $sdaynames[$d];
-                $days .= '<span class="' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span><br>\n"; 
+                $days[] = '<span class="' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span>"; 
             } 
             if (isset($hdaynames[$d])){
                 $info = $hdaynames[$d];
-                $days .= '<span class="' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span><br>\n"; 
+                $days[] = '<span class="' . $info['class'] . '">' . $d . ': ' . $info['name'] . "</span>"; 
             }
         }
         return ['table'=>$table, 'days'=>$days];

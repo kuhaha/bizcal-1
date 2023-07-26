@@ -16,8 +16,8 @@
   .month {
     font-size: 110%;
     font-weight: bold;
-    border-bottom: #9999ff 3px solid;
-    background-color: #ddddff;
+    border-bottom: #4e5d8d 2px solid;
+    background-color: #ededf1;
   }
   td.day{
     text-align: right;
@@ -36,17 +36,14 @@
 
   .holiday{
     color: red;
-    font-weight: bold;
   }
 
   .vacation{
-    color: rgb(247, 94, 120);
-    font-weight: bold;
+    color: rgb(196, 55, 79);
   }
 
   .workday{
     color: blue;
-    font-weight: bold;
   }
 
   td.holiday-names {

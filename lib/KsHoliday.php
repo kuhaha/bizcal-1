@@ -191,7 +191,7 @@ class KsHoliday
                     if ($hday > 0){
                         $date = (new \DateTime)->setDate($year, $month, $hday);
                         if ($sp_holiday != null ){ // fix the candidate sp_holiday 
-                            if ($sp_holiday === $date){
+                            if ($sp_holiday->format('Ymd') === $date->format('Ymd')){
                                 $sp_holiday->modify('+1 day');
                             }else{ 
                                 $holidays[$sp_holiday->format(self::DATE_FORMAT)] = self:: SUBSTITUTE_HOLIDAY;

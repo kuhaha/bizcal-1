@@ -34,13 +34,23 @@
 
   </head>
   <body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="home" viewBox="0 0 16 16">
+    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+  </symbol>
+  <symbol id="table" viewBox="0 0 16 16">
+    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+  </symbol>
+  <symbol id="calendar3" viewBox="0 0 16 16">
+    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+    <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+  </symbol>
+</svg>   
 <header>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-table" viewBox="0 0 16 16">
-        <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
-        </svg>
+      <a href="#" class="navbar-brand d-flex align-items-center">      
+      <svg width="20" height="20" fill="currentColor" class="bi bi-table"><use xlink:href="#table"/></svg>
         <strong class="text-info">&nbsp;KsuCalendar</strong>
       </a>
       <div class="d-flex justify-content-right"> 
@@ -56,8 +66,7 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
-    <div class="row">
-
+    <div class="row">    
       <h2 class="display-5"><span class="badge bg-success"><?=$year?></span> Business Calendar <span class="badge bg-success">KSU</span></h2>
     </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -111,7 +120,11 @@
     <p class="float-end mb-1">
       <a href="#">Back to top</a>
     </p>
-    <p class="mb-1">KsuCalendar is &copy; 2023 Klab, Kyushu Sangyo Univeristy</p>
+    <p class="mb-1"><svg width="16" height="16" fill="currentColor" class="bi bi-table"><use xlink:href="#table"/></svg>
+        <strong class="text-info">&nbsp;KsuCalendar</strong> is a Business Calendar with rule-based automatical calculation of 
+      special days such as national holidays, local business schedules (business days or non-business days). &copy; 2023 Klab, Kyushu Sangyo Univeristy. 
+       </p>
+       
     <p class="mb-0"><a href="http://www.is.kyusan-u.ac.jp/~chengk/">Visit the developer's homepage</a>.</p>
   </div>
 </footer>

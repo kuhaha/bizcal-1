@@ -13,57 +13,6 @@ class MyCalendar{
 
     const DAT_DIR = 'dat';
 
-    public function printYear($year)
-    {
-        $dat_holiday = Yaml::parseFile(self::DAT_DIR . "/holiday.yaml");
-        $holiday1 = new KsHoliday($year, $dat_holiday);
-        $holiday2 = new KsHoliday($year+1, $dat_holiday);
-
-        $curr_y = date('Y');
-        $prev_y = $year - 1;
-		$next_y = $year + 1;
-        echo '<div align="center">';
-		echo '<h2 class="year-title">'. $year .'年度カレンダー</h2>';
-		echo '<a href="index.php?y='.$prev_y.'">&lt;&lt;前年度</a>｜';
-		echo '<a href="index.php?y='.$curr_y.'">&lt;&lt;今年度&gt;&gt;</a>｜';
-		echo '<a href="index.php?y='.$next_y.'">来年度&gt;&gt;</a>';
-
-        $cno = 0;
-        $_row1 = $_row2 = $_row3 ='';
-        echo '<table>';
-        foreach (range(3,14) as $m){
-            $month = $m % 12 + 1;
-            $n_year = $year;
-            $holiday = $holiday1;
-            if ($month < 4) {
-                $n_year =  $year + 1;
-                $holiday = $holiday2;
-            }
-            $holidays = $holiday->getHolidays($month);
-            $calendar = new KsCalendar($n_year, $month);
-
-            $schedule = [];
-            try {
-                $schedule = Yaml::parseFile(self::DAT_DIR . "/schedule/cal{$year}.yaml");
-            }catch (Exception $e){
-                // echo $e->getMessage();
-            } 
-
-            $_row1 .= sprintf('<td class="month" width="200px">%d月</td>',  $month);
-            list('table'=>$table, 'days'=>$days) = $this->getMonth($n_year, $month, $holidays, $schedule);
-            $_row2 .= '<td class="cell">' . $table . "</td>\n";
-            $_row3 .= '<td class="holiday-names">' . implode('<br>',$days) . "</td>\n";
-            $cno++;
-            if ($cno % 6==0){
-                echo '<tr>' . $_row1 . "</tr>\n";
-                echo '<tr>' . $_row2 . "</tr>\n";
-                echo '<tr>' . $_row3 . "</tr>\n";
-                $_row1 = $_row2 = $_row3 ='';     
-            }
-        }
-        echo '</table>';
-    }
-
     function parseSchedule($data)
     {
         $days = [];

@@ -121,7 +121,7 @@
       <a href="#">Back to top</a>
     </p>
     <p class="mb-1"><svg width="16" height="16" fill="currentColor" class="bi bi-table"><use xlink:href="#table"/></svg>
-        <strong class="text-info">&nbsp;KsuCalendar</strong> is a Business Calendar with rule-based automatical calculation of 
+        <span class="badge bg-primary text-white">KsuCalendar</span> is a Business Calendar with rule-based automatical calculation of 
       special days such as national holidays, local business schedules (business days or non-business days). &copy; 2023 Klab, Kyushu Sangyo Univeristy. 
        </p>
        

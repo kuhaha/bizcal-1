@@ -31,7 +31,11 @@ class KsHoliday
     public function __construct(int $year, array $dat_holiday)
     {
         $this->year = $year;
-        $this->holidays = $this->parseHolidays($dat_holiday);
+        if ($this->year < 1948){
+            $this->holidays = [];
+        }else{
+            $this->holidays = $this->parseHolidays($dat_holiday);
+        }
     }
     
     /** get holidays of one month or a whole year (default)*/
@@ -163,8 +167,8 @@ class KsHoliday
     private function validate(array $day) : bool
     {
         $valid = true;
-        if (isset($day['for'])){
-            $valid = $valid && self::during($this->year, $day['for']);
+        if (isset($day['valid'])){
+            $valid = $valid && self::during($this->year, $day['valid']);
         }
         if (isset($day['except'])){
             $valid = $valid && !in_array($this->year, $day['except']);

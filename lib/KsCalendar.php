@@ -12,7 +12,7 @@ use function date;
 
 class KsCalendar
 {
-    public  $year;// @var year
+    public $year;// @var year
     public $month;// @var month
     public $lastday;// @var lastday of the month, days of the month
     public $n_weeks;// @var number of weeks
@@ -63,7 +63,7 @@ class KsCalendar
     }
 
     /** d2w(): transform a day number to weekday */
-    public function d2w(int $day, string $name='') 
+    public function d2w(int $day, string $name=''): string 
     {
         $w = ($this->firstwday + $day -1) % 7;
         if ($name === 'JP')
@@ -74,7 +74,7 @@ class KsCalendar
     }
 
     /** is_valid(): check the validality of a day */
-    public function is_valid(int  $d, string $flag='DAY') : bool
+    public function is_valid(int $d, string $flag='DAY') : bool
     {
         if ($flag==='DAY')
             return (1 <= $d and $d <= $this->lastday);
@@ -89,7 +89,7 @@ class KsCalendar
     }
 
 
-    public function getWeekdays($name="JP")
+    public function getWeekdays($name="JP"): array
     {
         if ($name==='EN'){
             return self::EN_WEEKDAY;            
@@ -97,7 +97,7 @@ class KsCalendar
         return self::JP_WEEKDAY;
     }
 
-    public function getDays()
+    public function getDays(): array 
     {
         $days = [];
         foreach (range(1, $this->lastday) as $d){
